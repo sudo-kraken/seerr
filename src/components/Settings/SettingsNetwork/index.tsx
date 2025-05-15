@@ -44,7 +44,7 @@ const messages = defineMessages('components.Settings.SettingsNetwork', {
   docs: 'documentation',
   forceIpv4First: 'Force IPv4 Resolution First',
   forceIpv4FirstTip:
-    'Force Jellyseerr to resolve IPv4 addresses first instead of IPv6',
+    'Force Seerr to resolve IPv4 addresses first instead of IPv6',
   dnsCache: 'DNS Cache',
   dnsCacheTip:
     'Enable caching of DNS lookups to optimize performance and avoid making unnecessary API calls',

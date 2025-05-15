@@ -58,7 +58,7 @@ const messages: { [messageName: string]: MessageDescriptor } = defineMessages(
     flushcache: 'Flush Cache',
     dnsCache: 'DNS Cache',
     dnsCacheDescription:
-      'Jellyseerr caches DNS lookups to optimize performance and avoid making unnecessary API calls.',
+      'Seerr caches DNS lookups to optimize performance and avoid making unnecessary API calls.',
     dnscacheflushed: '{hostname} dns cache flushed.',
     dnscachename: 'Hostname',
     dnscacheactiveaddress: 'Active Address',

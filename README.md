@@ -7,9 +7,9 @@
 </p>
 <p align="center">
 <a href="https://discord.gg/ckbvBtDJgC"><img src="https://img.shields.io/discord/952656177924300932" alt="Discord"></a>
-<a href="https://hub.docker.com/r/fallenbagel/jellyseerr"><img src="https://img.shields.io/docker/pulls/fallenbagel/jellyseerr" alt="Docker pulls"></a>
+<a href="https://hub.docker.com/r/seerr-team/seerr"><img src="https://img.shields.io/docker/pulls/seerr-team/seerr" alt="Docker pulls"></a>
 <a href="http://translate.jellyseerr.dev/engage/jellyseerr/"><img src="http://translate.jellyseerr.dev/widget/jellyseerr/jellyseerr-frontend/svg-badge.svg" alt="Translation status" /></a>
-<a href="https://github.com/fallenbagel/jellyseerr/blob/develop/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/fallenbagel/jellyseerr"></a>
+<a href="https://github.com/seerr-team/seerr/blob/develop/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/seerr-team/seerr"></a>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <a href="#contributors-"><img alt="All Contributors" src="https://img.shields.io/badge/all_contributors-71-orange.svg"/></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
@@ -62,6 +62,7 @@ You can access the API documentation from your local Seerr install at http://loc
 
 ## Community
 
+<<<<<<< HEAD
 You can ask questions, share ideas, and more in [GitHub Discussions](/../../discussions).
 
 If you would like to chat with other members of our growing community, [join the Seerr Discord server](https://discord.gg/ckbvBtDJgC)!
@@ -73,11 +74,19 @@ Our [Code of Conduct](./CODE_OF_CONDUCT.md) applies to all Jellyseerr community 
 
 # You can help improve Jellyseerr too! Check out our [Contribution Guide](./CONTRIBUTING.md) to get started.
 
-Our [Code of Conduct](https://github.com/fallenbagel/jellyseerr/blob/develop/CODE_OF_CONDUCT.md) applies to all Seerr community channels.
+# Our [Code of Conduct](https://github.com/fallenbagel/jellyseerr/blob/develop/CODE_OF_CONDUCT.md) applies to all Seerr community channels.
+
+You can ask questions, share ideas, and more in [GitHub Discussions](https://github.com/seerr-team/seerr/discussions).
+
+If you would like to chat with other members of our growing community, [join the Seerr Discord server](https://discord.gg/ckbvBtDJgC)!
+
+Our [Code of Conduct](https://github.com/seerr-team/seerr/blob/develop/CODE_OF_CONDUCT.md) applies to all Seerr community channels.
+
+> > > > > > > f5f6c637 (refactor: more rename to Seerr)
 
 ## Contributing
 
-You can help improve Seerr too! Check out our [Contribution Guide](https://github.com/fallenbagel/jellyseerr/blob/develop/CONTRIBUTING.md) to get started.
+You can help improve Seerr too! Check out our [Contribution Guide](https://github.com/seerr-team/seerr/blob/develop/CONTRIBUTING.md) to get started.
 
 > > > > > > > e2c3750b (refactor: rename to Seerr)
 
