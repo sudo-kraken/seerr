@@ -58,6 +58,7 @@ jobs:
 
   build:
     name: Build (${{ matrix.arch }})
+    needs: create-draft-release
     strategy:
       matrix:
         include:
@@ -212,12 +213,11 @@ jobs:
           trivy image --format cyclonedx --output seerr-ghcr-image-${{ env.VERSION }}.sbom \
             "ghcr.io/${{ github.repository }}@${{ needs.publish.outputs.image_digest }}"
 
-      - name: Attest SBOMs and write to bundle
+      - name: Attest SBOMs
         run: |
           cosign attest \
             --type cyclonedx \
             --predicate seerr-ghcr-image-${{ env.VERSION }}.sbom \
-            --bundle seerr-ghcr-image-${{ env.VERSION }}.bundle \
             "ghcr.io/${{ github.repository }}@${{ needs.publish.outputs.image_digest }}"
 
       - name: Upload SBOMs
@@ -225,14 +225,6 @@ jobs:
         with:
           name: sboms-${{ env.VERSION }}
           path: '*.sbom'
-          if-no-files-found: error
-          retention-days: 1
-
-      - name: Upload attestation bundle
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
-        with:
-          name: sbom-bundle-${{ env.VERSION }}
-          path: seerr-ghcr-image-${{ env.VERSION }}.bundle
           if-no-files-found: error
           retention-days: 1
 
@@ -253,13 +245,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Download attestation bundle
-        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5.0.0
-        with:
-          name: sbom-bundle-${{ env.VERSION }}
-          path: verify
+          password: ${{ secrets.GITHUB_TOKEN }}        
 
       - name: Verify signatures
         run: |
@@ -267,13 +253,12 @@ jobs:
             --certificate-identity "https://github.com/${{ github.workflow_ref }}" \
             --certificate-oidc-issuer "https://token.actions.githubusercontent.com"
 
-      - name: Verify attestations from bundle
+      - name: Verify attestations
         run: |
           cosign verify-attestation "ghcr.io/${{ github.repository }}@${{ needs.publish.outputs.image_digest }}" \
             --type cyclonedx \
-            --bundle verify/seerr-ghcr-image-${{ env.VERSION }}.bundle \
             --certificate-identity "https://github.com/${{ github.workflow_ref }}" \
-            --certificate-oidc-issuer "https://token.actions.githubusercontent.com"
+            --certificate-oidc-issuer "https://token.actions.githubusercontent.com" > /dev/null
 
   publish-release:
     name: Publish release
